@@ -1,3 +1,5 @@
+var Song = require('./song');
+
 
 //Playlist class
 function Playlist(name) {
@@ -14,7 +16,8 @@ Playlist.prototype.addSong = function(song) {
 };
 
 Playlist.prototype.find = function(song) {
-  //find the song in the Playlist, return loc
+  // find the song in the Playlist, return loc
+
   var index = -1;
   this.songs.forEach(function(q, i){
     if (q.title === song.title && q.artist === song.artist)
@@ -25,16 +28,19 @@ Playlist.prototype.find = function(song) {
 };
 
 Playlist.prototype.getArtists = function(){
-  //get all artists in the Playlist
+  // get all artists in the Playlist
+
   return this.songs.map(function(a){return a.artist;});
 };
 
 Playlist.prototype.currentlyPlaying = function() {
-  //return currently playing song
+  // return currently playing song
+
   return this.songs[this.currentSong];
 };
 
 Playlist.prototype.play = function() {
-  //start the playlist
+  // start the playlist
+
   this.currentSong = 0;
 };
